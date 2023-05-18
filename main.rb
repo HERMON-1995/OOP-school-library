@@ -32,8 +32,8 @@ class Main
       when 6
         @app.list_rentals
       when 7
-        puts "Thank you for using this app!"
-       return
+        puts 'Thank you for using this app!'
+        return
       end
     end
   end
