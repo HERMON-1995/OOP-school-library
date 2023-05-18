@@ -1,6 +1,6 @@
 require './decorator'
 
-class CapitalizeDecorator < Decorator
+class CapitilizeDecorator < Decorator
   def correct_name
     @nameable.correct_name.capitalize
   end
