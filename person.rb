@@ -16,12 +16,8 @@ class Person < Nameable
   attr_reader :id, :rentals
   attr_accessor :age, :name
 
-  def of_age?
-    @age >= 18
-  end
-
-  def can_use_services?
-    of_age? || @parent_permission
+  def can_use_services?(_age, _parent_permission)
+    of_age >= 18 || @parent_permission
   end
 
   def add_rental(book, date)
