@@ -37,7 +37,8 @@ class App
   end
 
   def create_person
-    input = select_person_type
+    person_type_input = Actions.new
+    input = person_type_input.select_person_type
     case input
     when 1
       create_student
@@ -46,11 +47,6 @@ class App
     else
       puts 'Invalid input, person not created'
     end
-  end
-
-  def select_person_type
-    puts 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
-    gets.chomp.to_i
   end
 
   def create_student
