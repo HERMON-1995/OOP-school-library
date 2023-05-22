@@ -113,6 +113,12 @@ To run tests, run the following command:
 - GitHub: [@githubhandle](https://github.com/HERMON-1995)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/hermon-gebre/)
 
+👤 **Author1**
+ *[Mutai-Gilbert]*
+ 
+- GitHub: [@githubhandle](https://github.com/Mutai-Gilbert)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mutai-gilbert-2a5a42137/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
@@ -145,7 +151,7 @@ If you like this project please show support by staring ⭐️.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-* I would like to give Microverse my sincerest gratitude for accommodating me in the Full-time Software Development program.
+* We would like to give Microverse our sincerest gratitude for accommodating us in the Full-time Software Development program.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
