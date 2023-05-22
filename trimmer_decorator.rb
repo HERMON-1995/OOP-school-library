@@ -1,7 +1,8 @@
-require_relative 'decorator'
+require './decorator'
 
 class TrimmerDecorator < Decorator
   def correct_name
-    @nameable.correct_name.strip[0...10]
+    name = @nameable.correct_name
+    name.length > 10 ? name[0..9] : name
   end
 end
