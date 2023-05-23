@@ -16,12 +16,26 @@ class Person < Nameable
   attr_reader :id, :rentals
   attr_accessor :age, :name
 
-  def can_use_services?(_age, _parent_permission)
-    of_age >= 18 || @parent_permission
+  def of_age?
+    @age >= 18
+  end
+
+  def can_use_services?
+    of_age? || @parent_permission
   end
 
   def add_rental(book, date)
     Rental.new(date, book, self)
+  end
+
+  def to_h
+    {
+      age: @age,
+      name: @name,
+      parent_permission: @parent_permission,
+      id: @id,
+      rentals: @rentals.map(&:to_h)
+    }
   end
 
   def correct_name
