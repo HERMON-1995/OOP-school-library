@@ -6,7 +6,7 @@ def save_data(data, file)
   File.write(file, json)
 end
 
-def load_data(file)
+def read_data(file)
   if File.exist?(file)
     data = File.read(file)
     JSON.parse(data)
