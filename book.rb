@@ -1,3 +1,4 @@
+require_relative 'rental'
 class Book
   def initialize(title, author)
     @title = title
@@ -6,7 +7,9 @@ class Book
   end
 
   def add_rental(person, date)
-    Rental.new(date, self, person)
+    rental = Rental.new(date, self, person)
+    @rentals << rental
+    rental
   end
 
   def to_h

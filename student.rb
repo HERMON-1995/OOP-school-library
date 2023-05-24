@@ -1,5 +1,5 @@
 # Student section
-require './person'
+require_relative './person'
 
 class Student < Person
   attr_reader :classroom

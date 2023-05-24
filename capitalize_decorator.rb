@@ -1,4 +1,4 @@
-require './decorator'
+require_relative './decorator'
 
 class CapitilizeDecorator < Decorator
   def correct_name
