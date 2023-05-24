@@ -27,6 +27,5 @@ RSpec.describe Book do
     end
   end
 
-# Paste the code here then delete this comment and sorry for not being on time today
-
+  # Paste the code here then delete this comment and sorry for not being on time today
 end
