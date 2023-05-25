@@ -4,30 +4,34 @@ require_relative '../rental'
 
 RSpec.describe Person do
   let(:person) { Person.new(18) }
+  let(:book) { Book.new('Title', 'Author') }
+  let(:date) { '12-02-2023' }
 
   describe '#initialize' do
-    it 'Return a new Person object' do
-      expect(person).to be_an_instance_of Person
-    end
+    context 'when creating a new Person object' do
+      it 'returns a new Person object' do
+        expect(person).to be_an_instance_of Person
+      end
 
-    it 'Assigns the age' do
-      expect(person.age).to eq 18
-    end
+      it 'assigns the age' do
+        expect(person.age).to eq 18
+      end
 
-    it 'Assign a default name if no name is given' do
-      expect(person.name).to eq 'Unknown'
-    end
+      it 'assigns a default name if no name is given' do
+        expect(person.name).to eq 'Unknown'
+      end
 
-    it 'Assigns parent permission to true by default' do
-      expect(person.instance_variable_get(:@parent_permission)).to eq true
-    end
+      it 'assigns parent permission to true by default' do
+        expect(person.instance_variable_get(:@parent_permission)).to eq true
+      end
 
-    it 'Assigns an id between 1 and 1000' do
-      expect(person.id).to be_between(1, 1000)
-    end
+      it 'assigns an id between 1 and 1000' do
+        expect(person.id).to be_between(1, 1000)
+      end
 
-    it 'Initializes an empty rentals array' do
-      expect(person.rentals).to be_empty
+      it 'initializes an empty rentals array' do
+        expect(person.rentals).to be_empty
+      end
     end
   end
 
@@ -55,9 +59,6 @@ RSpec.describe Person do
   end
 
   describe '#to_h' do
-    let(:book) { Book.new('Babel', 'B.Salwa') }
-    let(:date) { '12-02-2020' }
-
     it 'Return a hash' do
       expected_hash = {
         age: 18,
@@ -78,6 +79,24 @@ RSpec.describe Person do
 
     it 'Returns the default name if no name is given' do
       expect(person.correct_name).to eq('Unknown')
+    end
+  end
+
+  describe '#add_rental' do
+    it 'Creates a new Rental object and adds it to rentals array' do
+      rental = person.add_rental(book, date)
+      expect(rental).to be_an_instance_of Rental
+      expect(rental.date).to eq date
+    end
+
+    it 'Associates the rental with the person' do
+      rental = person.add_rental(book, date)
+      expect(rental.person).to eq person
+    end
+
+    it 'Associates the rental with the book' do
+      rental = person.add_rental(book, date)
+      expect(rental.book).to eq book
     end
   end
 end
