@@ -1,5 +1,5 @@
 # Student section
-require './person'
+require_relative './person'
 
 class Student < Person
   attr_reader :classroom
@@ -14,7 +14,11 @@ class Student < Person
   end
 
   def add_classroom(classroom)
-    @classroom = classroom
-    classroom.add_student(self) unless classroom.students.include?(self)
+    if classroom.students.include?(self)
+      # Student is already in the classroom, do nothing
+    else
+      @classroom = classroom
+      classroom.add_student(self)
+    end
   end
 end
