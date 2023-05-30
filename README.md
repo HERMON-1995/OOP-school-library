@@ -78,6 +78,11 @@ Install this project with:
 ```sh
   cd OOP school library
   bundle install
+```
+```sh
+  gem install rspec
+```
+```sh
   gem install --no-document rubocop -v '>= 1.0, < 2.0' # https://docs.rubocop.org/en/stable/installation/
 ```
 
@@ -95,6 +100,9 @@ To run tests, run the following command:
 
 ```sh
   rubocop --color
+```
+```sh
+  rspec
 ```
 
 ### Deployment
